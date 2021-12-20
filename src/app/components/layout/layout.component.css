@@ -1,0 +1,22 @@
+.aligning-container {
+    display: flex;
+    justify-content: center;
+}
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    margin: 10px;
+}
+
+.app-layout {
+    display: flex;
+    justify-content: center;
+    height: 575px;
+}
+
+.basic-container {
+    margin-left: 10px;
+    min-width: 200px;
+}
