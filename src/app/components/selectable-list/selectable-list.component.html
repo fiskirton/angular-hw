@@ -1,21 +1,6 @@
-<mat-selection-list [multiple]="false" role="list">
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 1</mat-list-option>
-    <mat-list-option role="listitem">Item 2</mat-list-option>
-    <mat-list-option role="listitem">Item 3</mat-list-option>
-    <mat-list-option role="listitem">Item 100</mat-list-option>
+<mat-selection-list [multiple]="false" role="list" class="selectable-list"
+    (selectionChange)="onSelect($event.option.value)">
+    <mat-list-option [value]="recipe.id" role="listitem" *ngFor="let recipe of recipes">
+        {{recipe.title}}
+    </mat-list-option>
 </mat-selection-list>

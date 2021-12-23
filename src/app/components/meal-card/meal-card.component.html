@@ -1,17 +1,28 @@
 <mat-card class="meal-card common-card">
     <mat-card-header>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-title>{{selectedRecipe.title}}</mat-card-title>
+        <mat-card-subtitle>Ochen vkusno</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="https://i.pinimg.com/originals/e4/4f/ca/e44fca55a6fb861266d2674f7bed40a3.jpg"
+        alt="Photo of a Shiba Inu">
     <mat-card-content>
-        <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-        </p>
+        <mat-card-title>Ingredients</mat-card-title>
+        <mat-list>
+            <mat-list-item *ngFor="let ingredient of selectedRecipe.ingredients; let i = index">
+                {{i + 1}}. {{ingredient.name}} {{ingredient.num}}{{ingredient.unit}}
+            </mat-list-item>
+        </mat-list>
+        <br>
+        <mat-divider [inset]="true"></mat-divider>
+        <br>
+        <mat-card-title>Steps</mat-card-title>
+        <mat-list>
+            <mat-list-item *ngFor="let step of selectedRecipe.steps; let i = index">
+                {{i + 1}}. {{step}}
+            </mat-list-item>
+        </mat-list>
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-button>ADD TO CART</button>
+        <button mat-button (click)="onClick(selectedRecipe.ingredients)">ADD TO CART</button>
     </mat-card-actions>
 </mat-card>
